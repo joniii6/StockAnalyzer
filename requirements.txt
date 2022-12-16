@@ -1,0 +1,7 @@
+mplfinance
+streamlit
+pandas
+matplotlib.pyplot
+numpy
+seaborn
+yfinance
