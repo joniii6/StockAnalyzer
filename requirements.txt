@@ -1,7 +1,7 @@
 mplfinance
 streamlit
 pandas
-matplotlib.pyplot
+matplotlib
 numpy
 seaborn
 yfinance
