@@ -24,7 +24,7 @@ st.title("Here you can analyze your stock")
 Ticker = st.text_input("Enter your Ticker")
 
 if Ticker == "":
-	Ticker = 'MSFT
+	Ticker = 'MSFT'
 
 Stock1_ind = index(Ticker)
 Stock1 = yf.Ticker(Ticker)
