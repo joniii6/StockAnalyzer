@@ -28,7 +28,7 @@ st.title("Here you can analyze your stock")
 
 Ticker = st.text_input("Enter your Ticker. Per default MSFT is used")
 
-if Ticker == ""
+if Ticker == "":
 	Ticker = 'MSFT'
 
 Stock1_ind = index(Ticker)
