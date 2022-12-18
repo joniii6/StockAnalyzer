@@ -6,7 +6,7 @@ numpy
 seaborn
 yfinance
 requests
-urllib.parse
+urllib
 math
 datetime
 pypfopt
