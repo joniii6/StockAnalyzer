@@ -5,3 +5,9 @@ matplotlib
 numpy
 seaborn
 yfinance
+requests
+urllib.parse
+math
+datetime
+pypfopt
+sklearn
