@@ -302,66 +302,72 @@ choice = st.multiselect("Choose some indices to benchmark against your stock", i
 
 Tickers_used_str = ''
 
-try:
-	for i in choice[:-1]:
-		Tickers_used_str += dict_ind.get(i) + ' '
-	Tickers_used_str += dict_ind.get(choice[-1])
-
-	Tickers_used = Tickers_used_str.split(' ')
-	Tickers_used = list(filter(None, Tickers_used))
-
-	Indices_used = index(Tickers_used_str, Tickers_used)
-
+if error = True:
+	pass
+else:
 	try:
-		Stock_used = index(Ticker, Ticker_list)
+		for i in choice[:-1]:
+			Tickers_used_str += dict_ind.get(i) + ' '
+		Tickers_used_str += dict_ind.get(choice[-1])
+
+		Tickers_used = Tickers_used_str.split(' ')
+		Tickers_used = list(filter(None, Tickers_used))
+
+		Indices_used = index(Tickers_used_str, Tickers_used)
+
+		try:
+			Stock_used = index(Ticker, Ticker_list)
+		except:
+			st.write("Enter a valid ticker")
+
+		if len(choice) == 1:
+			choice = choice[0]
+
+		fig, ax = plt.subplots()
+		try:
+			ax.plot(Stock_used, label = Ticker)
+		except:
+			pass
+
+
+		ax.plot(Indices_used, label = choice)
+		ax.legend()
+		ax.set_title('Benchmark your Stock against some Indices')
 	except:
-		st.write("Enter a valid ticker")
+		st.write("No Data for Benchmark available")
 
-	if len(choice) == 1:
-		choice = choice[0]
-
-	fig, ax = plt.subplots()
+if error = True:
+	pass
+else:
 	try:
-		ax.plot(Stock_used, label = Ticker)
+		Tickers_used_str += ' ' + Ticker
+		Tickers_used.append(Ticker)
+
+		ytd_benchmarks = ytd(Tickers_used_str, Tickers_used)
+
+		choice = list(choice)
+
+		Names = []
+
+		for i in choice:
+			Names.append(i)
+
+		Names.append(Name)
+
+
+		ytd_benchmarks['Name'] = Names
+
+		col1,col2,col3 = st.columns([3,1,1.1])
+
+		col1.pyplot(fig)
+
+		for i in range(len(ytd_benchmarks.index)):
+			if i <= 3:
+				col2.metric(f'YtD {ytd_benchmarks.iloc[i]["Name"]}', f' {ytd_benchmarks.iloc[i]["ytd_return"]} %')
+			else:
+				col3.metric(f'YtD {ytd_benchmarks.iloc[i]["Name"]} ',  f' {ytd_benchmarks.iloc[i]["ytd_return"]} %')
 	except:
-		pass
-
-
-	ax.plot(Indices_used, label = choice)
-	ax.legend()
-	ax.set_title('Benchmark your Stock against some Indices')
-except:
-	st.write("No Data for Benchmark available")
-
-try:
-	Tickers_used_str += ' ' + Ticker
-	Tickers_used.append(Ticker)
-
-	ytd_benchmarks = ytd(Tickers_used_str, Tickers_used)
-
-	choice = list(choice)
-
-	Names = []
-
-	for i in choice:
-		Names.append(i)
-
-	Names.append(Name)
-
-
-	ytd_benchmarks['Name'] = Names
-
-	col1,col2,col3 = st.columns([3,1,1.1])
-
-	col1.pyplot(fig)
-
-	for i in range(len(ytd_benchmarks.index)):
-		if i <= 3:
-			col2.metric(f'YtD {ytd_benchmarks.iloc[i]["Name"]}', f' {ytd_benchmarks.iloc[i]["ytd_return"]} %')
-		else:
-			col3.metric(f'YtD {ytd_benchmarks.iloc[i]["Name"]} ',  f' {ytd_benchmarks.iloc[i]["ytd_return"]} %')
-except:
-	st.write("No YtD Data for Benchmarks available")
+		st.write("No YtD Data for Benchmarks available")
 
 
 ## News --------------------------------------------------------------------------------------
