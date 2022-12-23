@@ -33,7 +33,8 @@ To do so clone this Github repository and move the folder to your desktop or to 
 After you have arrived at the storage location run the command `pip install -r requirements.txt`to install all the required libraries mentioned in the text file.
 When the installation was successfull move to the subfolder Webapp with `cd Webapp`. 
 To launch the website locally then run the command `streamlit run 1_🏠Markets-today.py`. To avoid searching the internet for the house emoji it is enough to use the tab on your keyboard to autofill the complete script name.
-Now the webapp should open in your preffered web browser. 
+Now the webapp should open in your preffered web browser.   
+If you encounter an error message on the webapp please refresh the website, as it might be that the connection to one of the APIs or streamlit is lost. After the refresh the page should work perfectly.   
 
 ## 3.) Navigating the Webapp <a name="third"/>
 
