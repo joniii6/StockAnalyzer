@@ -1,17 +1,17 @@
 # StockAnalyzer
 
-## Introduction
+## 1.) Introduction
 
 
-## Running the project
+## 2.) Running the project
 
 
-## Navigating the Webapp
+## 3.) Navigating the Webapp
 
 
 (Different functionalities)
 
-### Market Overview
+### 4.)Navigating the Webapp
 
 ### Stock Analysis
 
