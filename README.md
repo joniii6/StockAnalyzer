@@ -5,22 +5,20 @@
 
 ## 2.) Running the project
 
+This is a test
 
-## 3.) Navigating the Webapp
-
-
-(Different functionalities)
-
-### 4.)Navigating the Webapp
+## 4.) Navigating the Webapp
 
 ### Stock Analysis
+
+
 
 ### Portfolio Analysis
 
 ### About us
 
 
-## Appendix
+## 5.) Appendix
 
 
 
