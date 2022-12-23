@@ -70,7 +70,7 @@ The non-numerical data consists of internally processed data as well as external
 
 How do the codes on the page run and work: 
 This code is a script that uses several libraries to perform various tasks related to financial data analysis. The script starts by importing a number of libraries and defining some functions.   
-The first three functions: `Index` function, `ytd` function and `Definition `value_today` function fetch and process financial data for a specified set of tickers.   
+The first three functions: `Index` function, `ytd` function and `value_today` function fetch and process financial data for a specified set of tickers.   
       
 The next function calculates the return on equity (ROE) for a given ticker (e.g MSFT-microsoft) by using financial data from Yahoo Finance: getROE. Since the ROE was not directly extractable from the balance sheet or income statement we had to code the function ourselves. However the function does retrieve data from the income statement and balance sheet for the ticker, in order to then calculate the average equity over the past two periods, and return the ROE as a percentage.  
       
