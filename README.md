@@ -21,6 +21,10 @@ Jonas da muesch nomal ran
 
 ## 3.) Navigating the Webapp
 
+To show gathered and manipulated data in a user friendly way. app has different features across its four pages
+
+
+### Markets Today
 
 
 ### Stock Analysis
@@ -29,8 +33,15 @@ Jonas da muesch nomal ran
 
 ### Portfolio Analysis
 
+
+
+
+
+
+
 ### About us
 
+The last page of our Webapp, shows some basic information on the three creators of this Project. It provides information on the team's previous endeavours and it's reasonings behind the overlapping interests of finance and programming. 
 
 ## 4.) Appendix
 
