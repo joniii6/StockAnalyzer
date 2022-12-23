@@ -305,6 +305,8 @@ choice = st.multiselect("Choose some indices to benchmark against your stock", i
 
 if len(choice) == 0:
 	error2 = True
+else:
+	error2 = False
 
 col1,col2,col3 = st.columns([3,1,1.1])
 
