@@ -27,7 +27,7 @@ This Project was developped by:
 ## 2.) Running the project <a name="second"/>
 
 To run the webapp one has two options. As we deployed the webapp via streamlit it is accessible under the following link: xxxxxx
-The second option is to run the project locally. Therefore all the required libraries have to be installed first. To do so clone this Github repository and move the folder to your desktop. 
+The second option is to run the project locally. Therefore all the required libraries have to be installed first. To do so clone this Github repository and move the folder to your desktop or to a prefered place.  
 
 ## 3.) Navigating the Webapp <a name="third"/>
 
