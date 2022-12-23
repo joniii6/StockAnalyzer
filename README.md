@@ -20,13 +20,14 @@ Have you ever felt like some investment platforms just are not user friendly eno
 Most of the time all kinds of information are displayed for various financial instruments, however not all of them provide useful data to derive efficient investment decisions. This somewhat lack of overview led us to create “Stock Analyzer'' : A summarised web application with key numbers and company information we feel crucial to have access to from an investors perspective. By gathering information on historic data, company information and key financial ratios, the idea of the application was to provide potential investors with the toolkit to make data-backed investment decisions.
 
 This Project was developped by:
-- Jonas Kleubler
-- Flavia Lopreno
-- Laurin Tröhler
+- Jonas Kleubler (20-613-519)
+- Flavia Lopreno (19-919-091)
+- Laurin Tröhler (20-711-552)
 
 ## 2.) Running the project <a name="second"/>
 
-Jonas da muesch nomal ran
+To run the webapp one has two options. As we deployed the webapp via streamlit it is accessible under the following link: xxxxxx
+The second option is to run the project locally. Therefore all the required libraries have to be installed first. To do so clone this Github repository and move the folder to your desktop. 
 
 ## 3.) Navigating the Webapp <a name="third"/>
 
