@@ -29,7 +29,7 @@ This Project was developped by:
 To run the webapp one has two options. As we deployed the webapp via streamlit it is accessible under the following link: https://introprogramminghsg.streamlit.app/
 
 The second option is to run the project locally. Therefore all the required libraries have to be installed first. 
-To do so clone this Github repository and move the folder to your desktop or to a prefered place. After that open your terminal and navigate to the place where you have stored the folder. E.g: `cd desktop`, `cd StockAnalyzer-main`,`cd StockAnalyzer-main`
+To do so clone this Github repository and move the folder to your desktop or to a prefered place. After that open your terminal and navigate to the place where you have stored the folder. E.g: `cd desktop`, `cd StockAnalyzer-main`,`cd StockAnalyzer-main` (two times the same command as github creates the folder in this structure).
 After you have arrived at the storage location run the command `pip install -r requirements.txt`to install all the required libraries mentioned in the text file.
 When the installation was successfull move to the subfolder Webapp with `cd Webapp`. 
 To launch the website locally then run the command `streamlit run 1_🏠Home-Market-Overview.py`. To avoid searching the internet for the house emoji it is enough to use the tab on your keyboard to autofill the complete script name.
