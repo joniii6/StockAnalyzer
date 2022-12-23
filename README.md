@@ -44,7 +44,12 @@ To show gathered and manipulated data in a user friendly way. app has different 
 
 The portfolio building section of the Webapp, allows the user to build an optimal portfolio allocation, given a certain combination of stocks. The tool requires two different inputs. Firstly, the user needs to add the tickers of stocks, which he would like to have in his portfolio. As a second input, one must select the available financial ressources. This allows for the creation of an optimal allocation, given a certain financial allowance.
 
-After the selection of the preferred stocks, the user wants to have in its portfolio, the code gatheres historic financial stock data from the last ten years. To find an optimal weighting, we compute the covariance matrix of the selected stocks and their average returns. Using the principles of the efficient frontier, the webapp computes various portfolios with different weights composed of the selected stocks, which give the highest possible return, given a certain level of risk, which is measured in standard deviation. Ultimately we want to find the one portfolio lying on the efficient frontier, which maximises the sharpe ratio, as this indicates better portfolio performance. By doing these calculations, we end up with an optimal portfolio allocation, which tells us how much of each stock to buy given a certain resource allowance. 
+After the selection of the preferred stocks, the user wants to have in its portfolio, the code gatheres historic financial stock data from the last ten years. To find an optimal weighting, we compute the covariance matrix of the selected stocks and their average returns. 
+
+`mu = mean_historical_return(portfolio)`
+`S = CovarianceShrinkage(portfolio).ledoit_wolf()`
+
+Using the principles of the efficient frontier, the webapp computes various portfolios with different weights composed of the selected stocks, which give the highest possible return, given a certain level of risk, which is measured in standard deviation. Ultimately we want to find the one portfolio lying on the efficient frontier, which maximises the sharpe ratio, as this indicates better portfolio performance. By doing these calculations, we end up with an optimal portfolio allocation, which tells us how much of each stock to buy given a certain resource allowance. 
 
 
 
@@ -57,37 +62,35 @@ The last page of our Webapp, shows some basic information on the three creators 
 
 ## 4.) Appendix
 
-`Numpy`: NumPy is used for scientific computing and data analysis. It provides a large set of functions and tools that enable you to perform various mathematical and scientific operations on arrays and matrices of data. One of the main features of NumPy is its support for multidimensional arrays, which are used to represent data in a more organised and efficient way. NumPy also includes a variety of functions for performing operations on these arrays, such as mathematical functions, statistical functions, and linear algebra operations.
+`Numpy` Is used for scientific computing and data analysis. It provides a large set of functions and tools that enable you to perform various mathematical and scientific operations on arrays and matrices of data. One of the main features of NumPy is its support for multidimensional arrays, which are used to represent data in a more organised and efficient way. NumPy also includes a variety of functions for performing operations on these arrays, such as mathematical functions, statistical functions, and linear algebra operations.
 
-Pandas: Pandas is an open-source machine learning library that is essential for data scientists. It offers a range of high-level data structures and analysis tools, making it easier to perform tasks such as data manipulation, cleaning, and analysis. Some of the operations supported by Pandas include sorting, re-indexing, iteration, concatenation (concatenation refers to the creation of a new string by combining two or more existing strings), data conversion, visualisation, and aggregation.
+`Pandas` Is an open-source machine learning library that is essential for data scientists. It offers a range of high-level data structures and analysis tools, making it easier to perform tasks such as data manipulation, cleaning, and analysis. Some of the operations supported by Pandas include sorting, re-indexing, iteration, concatenation (concatenation refers to the creation of a new string by combining two or more existing strings), data conversion, visualisation, and aggregation.
 
-YFinance: Yfinance allows you to retrieve financial data from Yahoo Finance, a popular financial data provider. It provides a convenient and easy-to-use interface for accessing financial data, including stock prices, market data, and company information.
+`YFinance` Allows you to retrieve financial data from Yahoo Finance, a popular financial data provider. It provides a convenient and easy-to-use interface for accessing financial data, including stock prices, market data, and company information.
 Using yfinance, you can retrieve a wide range of financial data, including historical stock prices, current market data, and information about specific companies. You can also use the library to perform various types of analysis on the data, such as calculating returns, correlations, and moving averages. We used it because it is easy to use and provides a large amount of data. It is also regularly updated to ensure that the data it provides is current and accurate.
 
-Seaborn: Seaborn is a data visualisation library. It is built on top of Matplotlib and provides a high-level interface for creating attractive and informative statistical graphics. It is particularly useful for exploring and visualising multivariate data, and it is often used in conjunction with Pandas.
+`Seaborn` Is a data visualisation library. It is built on top of Matplotlib and provides a high-level interface for creating attractive and informative statistical graphics. It is particularly useful for exploring and visualising multivariate data, and it is often used in conjunction with Pandas.
 
-Matplotlib.pyplot: Matplotlib.pyplot is a sub-library of the Matplotlib library in Python and provides functions for creating visualisations of data. It is a powerful and flexible library that is widely used in scientific and technical computing to produce a variety of plots and charts. It is often used in combination with other libraries, such as NumPy and Pandas, to create sophisticated visualisations of data.
+`Matplotlib.pyplot` Is a sub-library of the Matplotlib library in Python and provides functions for creating visualisations of data. It is a powerful and flexible library that is widely used in scientific and technical computing to produce a variety of plots and charts. It is often used in combination with other libraries, such as NumPy and Pandas, to create sophisticated visualisations of data.
 
-Request: The requests library is a popular Python library for making HTTP requests. It provides a simple and easy-to-use interface for sending HTTP requests and receiving responses from web servers.
+`Request` Is a library for making HTTP requests. It provides a simple and easy-to-use interface for sending HTTP requests and receiving responses from web servers.
 Using requests, you can send various types of HTTP requests, including GET (which was frequently used for this project), and you can specify the parameters and payload of the request as needed. The library also provides functions for processing the response from the server, such as accessing the status code, headers, and content of the response.
-
 HTTP: HTTP stands for Hypertext Transfer Protocol and is a protocol for transmitting data over the internet. It is the foundation of the modern web, and it is used by web browsers and web servers to communicate with each other.
 When you visit a website in your web browser, your browser sends an HTTP request to the web server that hosts the site. The server then responds with an HTTP response, which includes the content of the website and other information about the response, such as the status code and headers.
 
-Json: The json library works with JSON (JavaScript Object Notation) data. JSON is a data interchange format that is used to transmit data between systems and is often used to represent data in a structured and organised way. It provides functions for encoding and decoding JSON data. It can be used to convert Python data structures, such as dictionaries and lists, into JSON-formatted strings, and to convert JSON-formatted strings into Python data structures. This allows you to easily exchange data with systems that use JSON as their data interchange format. Moreover it helps reading and writing configuration files, and storing data in a structured format. 
+`Json` Works with JSON (JavaScript Object Notation) data. JSON is a data interchange format that is used to transmit data between systems and is often used to represent data in a structured and organised way. It provides functions for encoding and decoding JSON data. It can be used to convert Python data structures, such as dictionaries and lists, into JSON-formatted strings, and to convert JSON-formatted strings into Python data structures. This allows you to easily exchange data with systems that use JSON as their data interchange format. Moreover it helps reading and writing configuration files, and storing data in a structured format. 
 
-Pypfopt: Pypfopt is a Python library for portfolio optimization, which is the process of selecting a portfolio of assets that optimises some objective, such as maximising return or minimising risk. Pypfopt provides tools and functions for constructing and analysing portfolios using various optimization techniques.
+`Pypfopt` Is a library used for portfolio optimization, which is the process of selecting a portfolio of assets that optimises some objective, such as maximising return or minimising risk. Pypfopt provides tools and functions for constructing and analysing portfolios using various optimization techniques.
 
-Math: The math library provides mathematical functions and tools. It includes a wide range of functions for tasks such as arithmetic, algebra, geometry, and trigonometry.
+`Math` Provides mathematical functions and tools. It includes a wide range of functions for tasks such as arithmetic, algebra, geometry, and trigonometry.
 
-Datetime: Is a useful tool for working with dates and times. It provides a range of functions and classes for storing, manipulating, and formatting date and time values and is often used in applications that need to store or manipulate date and time data, such as scheduling systems and financial software.
+`Datetime` Is a useful tool for working with dates and times. It provides a range of functions and classes for storing, manipulating, and formatting date and time values and is often used in applications that need to store or manipulate date and time data, such as scheduling systems and financial software.
 
-Sklearn: Provides a wide range of algorithms and tools for tasks such as classification, regression, clustering, dimensionality reduction, and model selection.
+`Sklearn` Provides a wide range of algorithms and tools for tasks such as classification, regression, clustering, dimensionality reduction, and model selection.
 
-Streamlit: Is used to create interactive web-based data applications. It allows users to build simple, lightweight, and efficient user interfaces for data applications without the need to write HTML, CSS, or JavaScript. Furthermore it provides a range of functions and widgets for building user interfaces, including buttons, text input fields, dropdown menus, and charts. It also includes features for organising and styling the user interface, such as layout management and custom themes.
+`Streamlit` Is used to create interactive web-based data applications. It allows users to build simple, lightweight, and efficient user interfaces for data applications without the need to write HTML, CSS, or JavaScript. Furthermore it provides a range of functions and widgets for building user interfaces, including buttons, text input fields, dropdown menus, and charts. It also includes features for organising and styling the user interface, such as layout management and custom themes.
 
-
-Urlencode: Is used to encode data that will be sent as part of a URL. It converts a dictionary, list of tuples, or a sequence of two-element tuples into a URL query string. 
+`Urlencode` Is used to encode data that will be sent as part of a URL. It converts a dictionary, list of tuples, or a sequence of two-element tuples into a URL query string. 
 
 
 
