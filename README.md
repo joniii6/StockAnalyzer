@@ -37,22 +37,29 @@ In order to show and analyze the data, we have created a Webapp with different f
 The Markets Today page is the first page the user is confronted with. Since graphs appear to catch the users attention, we wanted to create a graphical homepage. In order to do so we displayed a world market overview with six indexes of our choice: SP500, SMI, NASDAQ, NIKKEI, DAX and FTSE 100. Surrounding this graph you can find current and their year-to-date (YTD) volatility. In addition we decided to show US treasury bond rates and added commodities since we thought they were just as important.Last but not least, scrolling down the page you will find the latest news.   
 
 How do the codes on the page run and work: 
-The code imports several libraries, including yfinance, streamlit, and pandas. In a first step we defined some functions that perform various tasks related to stock analysis and financial news:    
+The code imports several libraries, including yfinance, streamlit, and pandas. In a first step we defined some functions that perform various tasks related to stock analysis and financial news: 
 
 The `Index` function takes a ticker string and a list of tickers as input, and returns a Pandas DataFrame containing the performance of each ticker in the list relative to its starting value (expressed as a percentage change). 
-The `ytd` function takes a ticker string and a list of tickers as input, and returns a Pandas DataFrame containing the year-to-date return for each ticker in the list (also expressed as a percentage change).   
 
+The `ytd` function takes a ticker string and a list of tickers as input, and returns a Pandas DataFrame containing the YTD return for each ticker in the list (also expressed as a percentage change). 
+     
 The `value_today` function takes a ticker string, a list of tickers, and a rounding value as input, and returns a Pandas DataFrame containing the current value of each ticker in the list, rounded to the specified number of decimal places.
+     
 And lastly the `get_a_page_of_headlines` function retrieves a page of headlines from a financial news API and returns the list of headlines.
-As a next step we build functions to create each individual section: market overview, bonds, commodities, exchange rates and news.   
-
-The `Section Bond` retrieves data about US Treasury bond rates using the value_today function and displays the data in the Streamlit app. The data is displayed in four columns, with each column showing the name and current value of a different bond rate. The bond rate data is retrieved from a DataFrame and the metric function is used to display the data in the Streamlit app. A subheading is also added to the app using the st.subheader function.   
-
-The commodity section gathers data about the YTD performance and current values of various commodities using the value_today and ytd functions. The data is then displayed in a Streamlit app in four columns, with each column showing the name, current value, and YTD performance of a different commodity. The commodity data is retrieved from two DataFrames and the metric function is used to display the data in the Streamlit app. A subheading is also added to the app using the st.subheader function.  
-
-The data in the `exchange rate section` is displayed in four columns, with each column showing the name, current value, and year-to-date (YTD) performance of a different exchange rate. The corresponding data is retrieved from two DataFrames and the metric function is used to display the data in the Streamlit app. The code also calculates the daily returns for each exchange rate using the index function and displays this data in the Streamlit app using the metric function. A subheading is also added to the app using the st.subheader function.
-For the news section we used the get_a_page_of_headlines function. The code creates three columns in the Streamlit app and populates each column with the image, title, description, and URL for a different news headline. If an error occurs during the execution of the code, an error message is displayed in the Streamlit app.   
-
+     
+As a next step we build functions to create each individual section: market overview, bonds, commodities, exchange rates and news. 
+    
+The `Section Bond` obtains data about US Treasury bond rates using the value_today function and displays the data in the Streamlit app. The data is displayed in four columns, with each column showing the name and current value of a different bond rate. The bond rate data is obtained from a DataFrame. 
+     
+The commodity section gathers data about the YTD performance and current values of various commodities using the `value_today` and `ytd` functions. The data is then displayed in a Streamlit app in four columns, with each column showing the name, current value, and YTD performance of a different commodity. The commodity data is retrieved from two DataFrames.
+      
+For both the section: bond and the commodity section metric functions are used to display the data in the Streamlit app. 
+        
+The data in the `exchange rate section` is displayed in four columns, with each column showing the name, current value, and YTD performance of a different exchange rate. The corresponding data is retrieved from two DataFrames and the metric function is used to display the data in the Streamlit app. The code also calculates the daily returns for each exchange rate using the index function and displays this data in the Streamlit app using the metric function. 
+        
+For the news section we used the `get_a_page_of_headlines` function. The code creates three columns in the Streamlit app and populates each column with the image, title, description, and URL for a different news headline. If an error occurs during the execution of the code, an error message is displayed in the Streamlit app.   
+        
+In all five codes a subheading was added to the app using the st.subheader function.
 
 ### Stock Analysis
 
