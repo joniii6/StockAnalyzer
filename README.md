@@ -10,7 +10,7 @@
 [2. Running the Project](#second)  
 [3. Navigating the Webapp](#third)  
 [4. Appendix](#fourth)  
-
+<a name="second"/>
 
 
 ## 1.) Introduction
