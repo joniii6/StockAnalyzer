@@ -13,4 +13,5 @@ sklearn
 streamlit
 urllib.parse
 yfinance
-streamlit==0.75.0
+math
+streamlit
