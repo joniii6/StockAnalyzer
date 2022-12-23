@@ -12,5 +12,5 @@ requests
 seaborn
 sklearn 	 
 streamlit
-from urllib.parse
+urllib.parse
 yfinance
