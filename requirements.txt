@@ -1,5 +1,4 @@
-datetime
-math	 	 
+datetime	 	 
 matplotlib.pyplot
 mplfinanc
 numpy
