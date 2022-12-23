@@ -70,22 +70,20 @@ The non-numerical data consists of internally processed data as well as external
 
 How do the codes on the page run and work: 
 This code is a script that uses several libraries to perform various tasks related to financial data analysis. The script starts by importing a number of libraries and defining some functions.   
-The first three functions: `Definition Index Function`, `Definition year to date function` and `Definition value today function` retrieve and process financial data for a specified set of tickers.     
-
+The first three functions: `Index` function, `ytd` function and `Definition `value_today` function fetch and process financial data for a specified set of tickers.   
+      
 The next function calculates the return on equity (ROE) for a given ticker (e.g MSFT-microsoft) by using financial data from Yahoo Finance: getROE. Since the ROE was not directly extractable from the balance sheet or income statement we had to code the function ourselves. However the function does retrieve data from the income statement and balance sheet for the ticker, in order to then calculate the average equity over the past two periods, and return the ROE as a percentage.  
-
-The fifth function, `Definition get info function`, fetches information about a stock with a given ticker symbol. It uses the Ticker function of the yfinance library to gather information about the stock, including the stock's name, P/E ratio, EBITDA, recommendations, dividends, ISIN number, business summary, major and institutional holders, sustainability data, current price, dividends, and total revenue. The function then returns all of these information as a tuple.   
-
-The sixth function used, is a Streamlit app function that allows users to input a stock ticker (e.g AAPL), retrieve financial information and plot graphs related to the stock. The app first takes in a ticker as user input and stores it in the Ticker variable. It then attempts to collect data for the ticker using the index() function, and if the ticker is not valid, an error message is displayed to the user. The function then retrieves further financial information for the ticker using the get_info() function, which uses the yfinance library to obtain information about the stock. The app then allows users to choose a period for which to plot a graph of the stock's closing price, and plots the graph using matplotlib. Finally, the function plots a bar chart showing the company's revenue and earnings over time, and calculates and displays the compound annual growth rate (CAGR) for both revenue and earnings. The seventh function `General Company Information`was used to obtain company information.   
-
+      
+The fifth function, `get_info` function, fetches information about a stock with a given ticker symbol. It uses the Ticker function of the yfinance library to gather information about the stock, including the stock's name, P/E ratio, EBITDA, recommendations, dividends, ISIN number, business summary, major and institutional holders, sustainability data, current price, dividends, and total revenue. The function then returns all of these information as a tuple.   
+       
+The sixth function used, is a Streamlit app function that allows users to input a stock ticker (e.g AAPL), retrieve financial information and plot graphs related to the stock. The app first takes in a ticker as user input and stores it in the Ticker variable. It then attempts to collect data for the ticker using the index() function, and if the ticker is not valid, an error message is displayed to the user. The function then retrieves further financial information for the ticker using the get_info() function, which uses the yfinance library to obtain information about the stock. The app then allows users to choose a period for which to plot a graph of the stock's closing price, and plots the graph using matplotlib. Finally, the function plots a bar chart showing the company's revenue and earnings over time, and calculates and displays the compound annual growth rate (CAGR) for both revenue and earnings. 
+The seventh function `General Company Information`was used to obtain company information.  
+          
 Furthermore we created a code `Benchmarking` which enabled our webapp users to compare different tickers to each other. The code first obtains the tickers for various indices and their corresponding names. It then allows users to select some indices from a list of names using a multi-select widget.
 The code then plots the stock and selected indices on the same graph to compare their performance. It also calculates the YTD return for the stock and selected indices and displays the values in separate metrics widgets. If there is an error in obtaining the data for the stock or indices (e.g. if the ticker is invalid), an error message is displayed.   
-
+         
 Since news articles have a big impact on investors decision making we decided to include a function retrieving articles too. This code tries to display the latest news articles related to a specific stock, represented by the variable Ticker. It first redeems the news articles and their associated URLs using the Stock.news attribute of the yfinance library. Then it displays the titles and URLs of the latest three news articles in three separate columns. In case there are no news articles available or if there is an error in retrieving the news articles, it will display a message saying "No News are available for this Ticker".  
-
-
-
-
+      
 ### Portfolio Analysis
 
 The portfolio building section of the Webapp, allows the user to build an optimal portfolio allocation, given a certain combination of stocks. The tool requires two different inputs. Firstly, the user needs to add the tickers of stocks, which he would like to have in his portfolio. As a second input, one must select the available financial ressources. This allows for the creation of an optimal allocation, given a certain financial allowance. On a technical side, we have reused previous defined functions, as well as creating new ones.   
