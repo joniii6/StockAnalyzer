@@ -336,7 +336,7 @@ else:
 	except:
 		st.write("No Data for Benchmark available")
 
-if error = True:
+if error == True:
 	pass
 else:
 	try:
