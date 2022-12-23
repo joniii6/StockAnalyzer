@@ -34,7 +34,7 @@ After you have arrived at the storage location run the command `pip install -r r
 When the installation was successfull move to the subfolder Webapp with `cd Webapp`. 
 To launch the website locally then run the command `streamlit run 1_🏠Markets-today.py`. To avoid searching the internet for the house emoji it is enough to use the tab on your keyboard to autofill the complete script name.
 Now the webapp should open in your preffered web browser.   
-If you encounter an error message on the webapp please refresh the website, as it might be that the connection to one of the APIs or streamlit is lost. After the refresh the page should work perfectly.   
+If you encounter an error message on the webapp please refresh the website, as it might be that the connection to one of the APIs or streamlit is lost. After the refresh the page should work perfectly. In general one can say that the webapp runs smoother when launching it locally.   
 
 ## 3.) Navigating the Webapp <a name="third"/>
 
