@@ -6,10 +6,10 @@
 
 
 ### Table of Contents  
-[1.) Introduction](#headers)  
-[2.) Running the Project](#headers)  
-[3.) Navigating the Webapp](#headers)  
-[4.) Appendix](#headers)  
+[1. Introduction](#headers)  
+[2. Running the Project](#headers)  
+[3. Navigating the Webapp](#headers)  
+[4. Appendix](#headers)  
 <a name="headers"/>
 
 
