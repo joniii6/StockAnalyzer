@@ -1,0 +1,13 @@
+datetime	 	 
+matplotlib
+numpy
+pandas
+PyPortfolioOpt
+requests
+seaborn
+scikit-learn 	 
+streamlit
+urllib3
+yfinance
+streamlit
+# math is not required as it is already installed with standard python. It just has to be imported
