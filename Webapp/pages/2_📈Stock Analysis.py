@@ -164,7 +164,7 @@ st.subheader('Financial information')
 col1, col2, col3 = st.columns([3, 1, 1.1])
 
 if error == True:
-	st.write('Define a valid ticker')
+	pass
 else:
 	try:
 		trailing_PE, ebitda, Stock, rec, div, ISIN, BS, mh, ih, sust, price, div, Name, rev = get_info(Ticker)
@@ -197,7 +197,7 @@ else:
 		pass
 
 if error == True:
-	st.write('Define a valid ticker')
+	pass
 else:
 	try:
 		earnings = Stock.earnings
@@ -239,7 +239,7 @@ except:
 
 
 if error == True:
-	st.write('Define a valid ticker')
+	pass
 else:
 	with st.expander(f"Show me the business description for {Name}"):
 		try:
@@ -265,7 +265,7 @@ except:
 ## Which more information??
 
 if error == True:
-	st.write('Define a valid ticker')
+	pass
 
 else:
 	try:
@@ -371,7 +371,7 @@ except:
 	st.subheader('Latest news')
 
 if error == True:
-	st.write('Define a valid Ticker')
+	pass
 else:
 	try:
 		titles = ([x.get('title') for x in Stock.news])
