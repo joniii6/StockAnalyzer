@@ -298,7 +298,7 @@ indices_names = ['SP500', 'SMI', 'NASDAQ', 'NIKKEI', 'DAX', 'FTSE 100']
 
 dict_ind = dict(zip(indices_names,indices_ticker_list))
 
-choice = st.multiselect("Choose some indices to benchmark against your stock", indices_names, default = 'SMI')
+choice = st.multiselect("Choose some indices to benchmark against your stock", indices_names)
 
 Tickers_used_str = ''
 
