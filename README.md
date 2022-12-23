@@ -30,8 +30,7 @@ Jonas da muesch nomal ran
 
 ## 3.) Navigating the Webapp
 
-To show gathered and manipulated data in a user friendly way. app has different features across its four pages
-
+In order to show and analyze the data, we have created a Webapp with different funcionalities and features across four different pages, which are being described in the following sections.
 
 ### Markets Today
 
@@ -67,7 +66,7 @@ The portfolio building section of the Webapp, allows the user to build an optima
 After the selection of the preferred stocks, the user wants to have in its portfolio, the code gatheres historic financial stock data from the last ten years. To find an optimal weighting, we compute the covariance matrix of the selected stocks and their average returns.   
 For this we have used the following two codes from the `Pypfopt` library: `mu = mean_historical_return(portfolio)` calculates average returns and `S = CovarianceShrinkage(portfolio).ledoit_wolf()` creates the covariance matrices.   
 
-Using the principles of the efficient frontier, the webapp computes various portfolios with different weightings, which give the highest possible return, given a certain level of risk, which is measured in standard deviation. To create this frontier, we use `ef = EfficientFrontier(mu, S)` with the previously calculated return and covariance as input elements.   
+Using the principles of the efficient frontier, the webapp computes various portfolios with different weightings, which give the highest possible return, given a certain level of risk (measured in standard deviation). To create this frontier, we use `ef = EfficientFrontier(mu, S)` with the previously calculated return and covariance as the two input elements.   
 
 Ultimately with the following code `raw_weights = ef.max_sharpe()` we are able to find the one portfolio lying on the efficient frontier, which maximises the sharpe ratio, as this indicates better portfolio performance. By doing these calculations, we end up with an optimal portfolio allocation, which tells us how much of each stock to buy given a certain resource allowance. 
 
