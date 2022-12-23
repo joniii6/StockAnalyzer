@@ -6,14 +6,14 @@
 
 
 ### Table of Contents  
-[1. Introduction](#headers)  
+[1. Introduction](#first)  
 [2. Running the Project](#second)  
 [3. Navigating the Webapp](#third)  
 [4. Appendix](#fourth)  
-<a name="second"/>
 
 
-## 1.) Introduction
+
+## 1.) Introduction <a name="first"/>
 
 Have you ever felt like some investment platforms just are not user friendly enough?   
 
@@ -24,11 +24,11 @@ This Project was developped by:
 - Flavia Lopreno
 - Laurin Tröhler
 
-## 2.) Running the project
+## 2.) Running the project <a name="second"/>
 
 Jonas da muesch nomal ran
 
-## 3.) Navigating the Webapp
+## 3.) Navigating the Webapp <a name="third"/>
 
 In order to show and analyze the data, we have created a Webapp with different funcionalities and features across four different pages, which are being described in the following sections.
 
@@ -104,7 +104,7 @@ Ultimately with the following code `raw_weights = ef.max_sharpe()` we are able t
 
 The last page of our Webapp, shows some basic information on the three creators of this Project. It provides information on the team's previous endeavours and it's reasonings behind the overlapping interests of finance and programming. 
 
-## 4.) Appendix
+## 4.) Appendix <a name="fourth"/>
 
 `Numpy` Is used for scientific computing and data analysis. It provides a large set of functions and tools that enable you to perform various mathematical and scientific operations on arrays and matrices of data. One of the main features of NumPy is its support for multidimensional arrays, which are used to represent data in a more organised and efficient way. NumPy also includes a variety of functions for performing operations on these arrays, such as mathematical functions, statistical functions, and linear algebra operations.
 
