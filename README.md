@@ -39,20 +39,26 @@ Now the webapp should open in your preffered web browser.
 
 In order to show and analyze the data, we have created a Webapp with different funcionalities and features across four different pages, which are being described in the following sections.
 
+### General
+
+In general we worked with `try:`and `except`statements to avoid getting error messages in the webapp when we are not able to retrive certain parts of information through Yahoo finance or the user inputs do not fit the requirements. Instead we created our own warnings and error messages to inform the user about missing data or an invalid input. In case of single missing data points we display "NA" to inform the user that no data is available.   
+It also has to be mentioned that a large part of our webapp is relying on the yfinance library, which gathers data from Yahoo finance via webscraping. In consequence this could lead to errors if there is a bug in the library or if Yahoo finance changes its design. However, the library is maintained and updated frequently and should work again after a few days as soon as the necessary adjustments were published.  
+For financial analysis often adjusted stock prices are used. As yfinance mainly offers closing prices, our calculations are based on them. 
+
 ### Markets Today
 
-The Markets Today page is the first page the user is confronted with. Since graphs appear to catch the users attention, we wanted to create a graphical homepage. In order to do so we displayed a world market overview with six indexes of our choice: SP500, SMI, NASDAQ, NIKKEI, DAX and FTSE 100. Surrounding this graph you can find current and their year-to-date (YTD) volatility. In addition we decided to show US treasury bond rates and added commodities since we thought they were just as important.Last but not least, scrolling down the page you will find the latest news.   
+The Markets Today page is the first page the user is confronted with. Since graphs appear to catch the users attention, we wanted to create a graphical homepage. In order to do so we displayed a world market overview with six indices of our choice: SP500, SMI, NASDAQ, NIKKEI, DAX and FTSE 100. Surrounding this graph you can find current and their year-to-date (YTD) volatility. In addition we decided to show US treasury bond rates and added commodities since we thought they were just as important.Last but not least, scrolling down the page you will find the latest news.   
 
 How do the codes on the page run and work: 
 The code imports several libraries, including yfinance, streamlit, and pandas. In a first step we defined some functions that perform various tasks related to stock analysis and financial news: 
 
-The `Index` function takes a ticker string and a list of tickers as input, and returns a Pandas DataFrame containing the performance of each ticker in the list relative to its starting value (expressed as a percentage change). 
+The `Index` function takes a ticker string and a list of tickers as input, and returns a Pandas DataFrame containing the indexed closing prices of the selected tickers. As it might be that the trading dates differ for the individual tickers, we fill NA values with the value of the previous day `df.fillna(method = 'ffill', inplace = True)`. If the first value in the dataframe is missing, we do not have the option to fill it with the previous value. Therefore, we then fill it with the value of the next day `df.fillna(method = 'bfill', inplace = True)`.   
 
-The `ytd` function takes a ticker string and a list of tickers as input, and returns a Pandas DataFrame containing the YTD return for each ticker in the list (also expressed as a percentage change). 
+The `ytd` function takes a ticker string and a list of tickers as input, and returns a Pandas DataFrame containing the YTD return for each ticker in the list (expressed as a percentage change). To calculate the ytd return the`index`function is used, as one can then simply substract the first value from the last value with the same input as for the index function `round(df.iloc[last_index][i] - df.iloc[0][i],2)`.   
      
-The `value_today` function takes a ticker string, a list of tickers, and a rounding value as input, and returns a Pandas DataFrame containing the current value of each ticker in the list, rounded to the specified number of decimal places.
+The `value_today` function takes a ticker string, a list of tickers, and a rounding value as input, and returns a Pandas DataFrame containing the current value of each ticker in the list, rounded to the specified number of decimal places. To do so we simply select the last available closing price. We do so by ch
      
-And lastly the `get_a_page_of_headlines` function retrieves a page of headlines from a financial news API and returns the list of headlines.
+And lastly the `get_a_page_of_headlines` function retrieves a page of headlines from a financial news API (marketaux.com) and returns the list of headlines. For each news article we then select the title, the description and the image url to later on display it on our webapp. As the API recquires payment for larger data requests we are limited to 100 requests per day.   
      
 As a next step we build functions to create each individual section: market overview, bonds, commodities, exchange rates and news. 
     
@@ -79,7 +85,7 @@ How do the codes on the page run and work:
 This code is a script that uses several libraries to perform various tasks related to financial data analysis. The script starts by importing a number of libraries and defining some functions.   
 The first three functions: `Index` function, `ytd` function and `value_today` function fetch and process financial data for a specified set of tickers.   
       
-The next function calculates the return on equity (ROE) for a given ticker (e.g MSFT-microsoft) by using financial data from Yahoo Finance: getROE. Since the ROE was not directly extractable from the balance sheet or income statement we had to code the function ourselves. However the function does retrieve data from the income statement and balance sheet for the ticker, in order to then calculate the average equity over the past two periods, and return the ROE as a percentage.  
+The next function calculates the return on equity (ROE) for a given ticker (e.g MSFT-microsoft) by using financial data from Yahoo Finance: `getROE`.Since the ROE was not directly extractable from the balance sheet or income statement we had to code the function ourselves. However the function does retrieve data from the income statement and balance sheet for the ticker, in order to then calculate the average equity over the past two periods, and return the ROE as a percentage.  
       
 The fifth function, `get_info` function, fetches information about a stock with a given ticker symbol. It uses the Ticker function of the yfinance library to gather information about the stock, including the stock's name, P/E ratio, EBITDA, recommendations, dividends, ISIN number, business summary, major and institutional holders, sustainability data, current price, dividends, and total revenue. The function then returns all of these information as a tuple.   
        
