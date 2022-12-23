@@ -7,10 +7,13 @@
 
 ### Table of Contents  
 [1. Introduction](#headers)  
-[2. Running the Project](#headers)  
-[3. Navigating the Webapp](#headers)  
-[4. Appendix](#headers)  
+[2. Running the Project](#second)  
+[3. Navigating the Webapp](#third)  
+[4. Appendix](#fourth)  
 <a name="headers"/>
+<a name="second"/>
+<a name="third"/>
+<a name="fourth"/>
 
 
 ## 1.) Introduction
