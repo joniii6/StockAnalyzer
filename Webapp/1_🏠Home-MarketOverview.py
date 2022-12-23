@@ -11,7 +11,7 @@ from	pypfopt.expected_returns import mean_historical_return
 from	pypfopt.risk_models	import CovarianceShrinkage
 import requests
 import seaborn as sns
-import sklearn 	 
+import sklearn
 import streamlit as st
 from	urllib.parse import urlencode
 import yfinance as yf
