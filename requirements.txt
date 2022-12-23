@@ -9,5 +9,4 @@ sklearn
 streamlit
 urllib3
 yfinance
-math
 streamlit
