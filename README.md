@@ -102,7 +102,7 @@ The first part of the portfolio analysis page offers the user the opportunity to
 
 The portfolio building section of this page, allows the user to build an optimal portfolio allocation, given a certain combination of stocks. The tool requires two different inputs. Firstly, the user needs to add the tickers of stocks, which he would like to have in his portfolio. As a second input, one must select the available financial ressources. This allows for the creation of an optimal allocation, given a certain financial allowance. On a technical side, we have reused previous defined functions, as well as creating new ones.   
 
-After the selection of the preferred stocks, the user wants to have in its portfolio, the code gatheres historic financial stock data from the last ten years. To find an optimal weighting, we compute the covariance matrix of the selected stocks and their average returns.   
+After the selection of the preferred stocks, the user wants to have in its portfolio, the code gatheres historic financial stock data from the last five years. Of course different time periods have a large impact on the results. We decided to use a five year period, as our results should on the one side reflect the current risk profile of a company but on the other side should also reflect different cycles of the market [^1]. To find an optimal weighting, we compute the covariance matrix of the selected stocks and their average returns.   
 For this we have used the following two codes from the `Pypfopt` library: `mu = mean_historical_return(portfolio)` calculates average returns and `S = CovarianceShrinkage(portfolio).ledoit_wolf()` creates the covariance matrices.   
 
 Using the principles of the efficient frontier, the webapp computes various portfolios with different weightings, which give the highest possible return, given a certain level of risk (measured in standard deviation). To create this frontier, we use `ef = EfficientFrontier(mu, S)` with the previously calculated return and covariance as the two input elements.   
@@ -150,7 +150,7 @@ When you visit a website in your web browser, your browser sends an HTTP request
 
 `Urlencode` Is used to encode data that will be sent as part of a URL. It converts a dictionary, list of tuples, or a sequence of two-element tuples into a URL query string. 
 
-
+[^1]: https://investmentsandwealth.org/getattachment/8ac04ae1-e30d-4c52-9015-c58b105e652c/IWM13JulAug-EfficientFrontierMPT.pdf
 
 
 
