@@ -44,6 +44,7 @@ In order to show and analyze the data, we have created a Webapp with different f
 
 In general we worked with `try:`and `except`statements to avoid getting error messages in the webapp when we are not able to retrive certain parts of information through Yahoo finance or the user inputs do not fit the requirements. Instead we created our own warnings and error messages to inform the user about missing data or an invalid input. In case of single missing data points we display "NA" to inform the user that no data is available.   
 It also has to be mentioned that a large part of our webapp is relying on the yfinance library, which gathers data from Yahoo finance via webscraping. In consequence this could lead to errors if there is a bug in the library or if Yahoo finance changes its design. However, the library is maintained and updated frequently and should work again after a few days as soon as the necessary adjustments were published.  
+
 For financial analysis often adjusted stock prices are used. As yfinance mainly offers closing prices, our calculations are based on them. 
 
 ### Markets Today
