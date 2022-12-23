@@ -62,14 +62,14 @@ Since news articles have a big impact on investors decision making we decided to
 
 ### Portfolio Analysis
 
-The portfolio building section of the Webapp, allows the user to build an optimal portfolio allocation, given a certain combination of stocks. The tool requires two different inputs. Firstly, the user needs to add the tickers of stocks, which he would like to have in his portfolio. As a second input, one must select the available financial ressources. This allows for the creation of an optimal allocation, given a certain financial allowance.
+The portfolio building section of the Webapp, allows the user to build an optimal portfolio allocation, given a certain combination of stocks. The tool requires two different inputs. Firstly, the user needs to add the tickers of stocks, which he would like to have in his portfolio. As a second input, one must select the available financial ressources. This allows for the creation of an optimal allocation, given a certain financial allowance. On a technical side, we have reused previous defined functions, as well as creating new ones.   
 
-After the selection of the preferred stocks, the user wants to have in its portfolio, the code gatheres historic financial stock data from the last ten years. To find an optimal weighting, we compute the covariance matrix of the selected stocks and their average returns. 
+After the selection of the preferred stocks, the user wants to have in its portfolio, the code gatheres historic financial stock data from the last ten years. To find an optimal weighting, we compute the covariance matrix of the selected stocks and their average returns.   
+For this we have used the following two codes from the `Pypfopt` library: `mu = mean_historical_return(portfolio)` calculates average returns and `S = CovarianceShrinkage(portfolio).ledoit_wolf()` creates the covariance matrices.   
 
-`mu = mean_historical_return(portfolio)`
-`S = CovarianceShrinkage(portfolio).ledoit_wolf()`
+Using the principles of the efficient frontier, the webapp computes various portfolios with different weightings, which give the highest possible return, given a certain level of risk, which is measured in standard deviation. To create this frontier, we use `ef = EfficientFrontier(mu, S)` with the previously calculated return and covariance as input elements.   
 
-Using the principles of the efficient frontier, the webapp computes various portfolios with different weights composed of the selected stocks, which give the highest possible return, given a certain level of risk, which is measured in standard deviation. Ultimately we want to find the one portfolio lying on the efficient frontier, which maximises the sharpe ratio, as this indicates better portfolio performance. By doing these calculations, we end up with an optimal portfolio allocation, which tells us how much of each stock to buy given a certain resource allowance. 
+Ultimately with the following code `raw_weights = ef.max_sharpe()` we are able to find the one portfolio lying on the efficient frontier, which maximises the sharpe ratio, as this indicates better portfolio performance. By doing these calculations, we end up with an optimal portfolio allocation, which tells us how much of each stock to buy given a certain resource allowance. 
 
 
 
