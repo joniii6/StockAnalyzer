@@ -1,7 +1,6 @@
 import datetime as dt
 import math	 	 
 import matplotlib.pyplot as plt
-import mplfinance as mpf
 import numpy as np
 import pandas as pd
 from	pypfopt import EfficientFrontier
