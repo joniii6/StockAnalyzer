@@ -26,7 +26,7 @@ This Project was developped by:
 
 ## 2.) Running the project <a name="second"/>
 
-To run the webapp one has two options. As we deployed the webapp via streamlit it is accessible under the following link: https://introprogramminghsg.streamlit.app/
+To run the webapp one has two options. As we deployed the webapp via streamlit it is accessible under the following link: [https://introprogramminghsg.streamlit.app/](https://introprogramminghsg.streamlit.app/)
 
 The second option is to run the project locally. Therefore all the required libraries have to be installed first. 
 To do so clone this Github repository and move the folder to your desktop or to a prefered place. After that open your terminal and navigate to the place where you have stored the folder. E.g: `cd desktop`, `cd StockAnalyzer-main`,`cd StockAnalyzer-main` (two times the same command as github creates the folder in this structure).
