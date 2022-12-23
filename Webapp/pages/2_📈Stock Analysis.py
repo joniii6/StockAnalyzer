@@ -302,7 +302,7 @@ choice = st.multiselect("Choose some indices to benchmark against your stock", i
 
 Tickers_used_str = ''
 
-if error = True:
+if error == True:
 	pass
 else:
 	try:
