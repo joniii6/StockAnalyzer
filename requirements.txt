@@ -5,7 +5,7 @@ pandas
 PyPortfolioOpt
 requests
 seaborn
-sklearn 	 
+scikit-learn	 
 streamlit
 urllib3
 yfinance
