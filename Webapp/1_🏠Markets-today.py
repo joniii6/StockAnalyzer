@@ -271,6 +271,3 @@ try:
 except:
 	st.error('The website has reached 100 news requests today which is the limit of our API license :(  \n''Try again tomorrow!')
 	
-
-
-
